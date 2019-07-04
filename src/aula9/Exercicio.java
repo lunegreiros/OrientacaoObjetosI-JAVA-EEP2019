@@ -38,10 +38,10 @@ public class Exercicio extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jButtonProcurar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        jButtonCarregar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -56,20 +56,20 @@ public class Exercicio extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Procurar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonProcurar.setText("Procurar");
+        jButtonProcurar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonProcurarActionPerformed(evt);
             }
         });
 
         jLabel2.setText("Delimitador:");
 
-        jButton2.setText("Carregar");
-        jButton2.setEnabled(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonCarregar.setText("Carregar");
+        jButtonCarregar.setEnabled(false);
+        jButtonCarregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonCarregarActionPerformed(evt);
             }
         });
 
@@ -115,12 +115,12 @@ public class Exercicio extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(jButtonCarregar)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jTextField1)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
+                        .addComponent(jButtonProcurar)
                         .addGap(68, 68, 68))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(37, Short.MAX_VALUE)
@@ -134,12 +134,12 @@ public class Exercicio extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jButtonProcurar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
+                    .addComponent(jButtonCarregar))
                 .addGap(41, 41, 41)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(112, Short.MAX_VALUE))
@@ -154,12 +154,12 @@ public class Exercicio extends javax.swing.JFrame {
     String linha, tok1, tok2, tok3, tok4;
     int i, indice;
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonProcurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProcurarActionPerformed
         JFileChooser chooser = new JFileChooser();
         if(chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION){
             jTextField1.setText(chooser.getSelectedFile().getAbsolutePath());
             file = chooser.getSelectedFile();
-            jButton2.setEnabled(true);
+            jButtonCarregar.setEnabled(true);
             //habilitar o botão carregar
         }else{
             jTextField1.setText("");
@@ -167,13 +167,13 @@ public class Exercicio extends javax.swing.JFrame {
             //desabilitar o botão carregar
             
         }// TODO add your handling code here:        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonProcurarActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
      // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonCarregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCarregarActionPerformed
     
         
         try {
@@ -200,7 +200,7 @@ public class Exercicio extends javax.swing.JFrame {
                 System.out.println(e.getMessage());
             }
         }        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonCarregarActionPerformed
 
 public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -234,8 +234,8 @@ public static void main(String args[]) {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonCarregar;
+    private javax.swing.JButton jButtonProcurar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

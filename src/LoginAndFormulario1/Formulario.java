@@ -53,10 +53,10 @@ public class Formulario extends javax.swing.JFrame {
     
     private void carregarCampos(int linha){
         DefaultTableModel model = ((DefaultTableModel)jTable1.getModel());
-        jTextField4.setText((String)model.getValueAt(linha, 0));
-        jTextField3.setText((String)model.getValueAt(linha, 1));
-        jTextField2.setText((String)model.getValueAt(linha, 3));
-        jTextField1.setText((String)model.getValueAt(linha, 2));
+        jTextFieldID.setText((String)model.getValueAt(linha, 0));
+        jTextFieldNome.setText((String)model.getValueAt(linha, 1));
+        jTextFieldQtd.setText((String)model.getValueAt(linha, 3));
+        jTextFieldPreco.setText((String)model.getValueAt(linha, 2));
     }
     
     @Override
@@ -65,26 +65,26 @@ public class Formulario extends javax.swing.JFrame {
     }
     
     private void limparCampos(){
-       jTextField1.setText("");
-       jTextField2.setText("");
-       jTextField3.setText("");
-       jTextField4.setText("");
+       jTextFieldPreco.setText("");
+       jTextFieldQtd.setText("");
+       jTextFieldNome.setText("");
+       jTextFieldID.setText("");
     }
     
     private void reiniciaBotoes(){
-       jButton1.setEnabled(true);
-       jButton2.setEnabled(true);
-       jButton3.setEnabled(true);
-       jButton4.setEnabled(false);
-       jButton5.setEnabled(false);
+       jButtonBuscar.setEnabled(true);
+       jButtonLimpar.setEnabled(true);
+       jButtonInserir.setEnabled(true);
+       jButtonAlterar.setEnabled(false);
+       jButtonRemover.setEnabled(false);
     }
     
     private void redefinirBotoes(){
-       jButton1.setEnabled(false);
-       jButton2.setEnabled(true);
-       jButton3.setEnabled(false);
-       jButton4.setEnabled(true);
-       jButton5.setEnabled(true);
+       jButtonBuscar.setEnabled(false);
+       jButtonLimpar.setEnabled(true);
+       jButtonInserir.setEnabled(false);
+       jButtonAlterar.setEnabled(true);
+       jButtonRemover.setEnabled(true);
     }
     
     private void listarTabela(){
@@ -104,11 +104,7 @@ public class Formulario extends javax.swing.JFrame {
             }
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(
-                    this,
-                    e.getMessage(),
-                    "ERRO",
-                    JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, e.getMessage(), "ERRO", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -125,18 +121,18 @@ public class Formulario extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldPreco = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        jTextFieldQtd = new javax.swing.JTextField();
+        jTextFieldNome = new javax.swing.JTextField();
+        jTextFieldID = new javax.swing.JTextField();
+        jButtonBuscar = new javax.swing.JButton();
+        jButtonLimpar = new javax.swing.JButton();
+        jButtonInserir = new javax.swing.JButton();
+        jButtonAlterar = new javax.swing.JButton();
+        jButtonRemover = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de Produtos");
@@ -181,47 +177,47 @@ public class Formulario extends javax.swing.JFrame {
 
         jLabel4.setText("Quantidade:");
 
-        jTextField4.setEditable(false);
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldID.setEditable(false);
+        jTextFieldID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                jTextFieldIDActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Buscar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonBuscar.setText("Buscar");
+        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonBuscarActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Limpar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonLimpar.setText("Limpar");
+        jButtonLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonLimparActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Inserir");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonInserir.setText("Inserir");
+        jButtonInserir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonInserirActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Alterar");
-        jButton4.setEnabled(false);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAlterar.setText("Alterar");
+        jButtonAlterar.setEnabled(false);
+        jButtonAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                jButtonAlterarActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Remover");
-        jButton5.setEnabled(false);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jButtonRemover.setText("Remover");
+        jButtonRemover.setEnabled(false);
+        jButtonRemover.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                jButtonRemoverActionPerformed(evt);
             }
         });
 
@@ -241,24 +237,24 @@ public class Formulario extends javax.swing.JFrame {
                             .addComponent(jLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldQtd, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addComponent(jButtonBuscar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
+                        .addComponent(jButtonInserir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(jButtonLimpar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)
+                        .addComponent(jButtonAlterar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5)))
+                        .addComponent(jButtonRemover)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -266,26 +262,26 @@ public class Formulario extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(4, 4, 4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton5)
-                        .addComponent(jButton4)
-                        .addComponent(jButton2)
-                        .addComponent(jButton3)
-                        .addComponent(jButton1))
+                        .addComponent(jButtonRemover)
+                        .addComponent(jButtonAlterar)
+                        .addComponent(jButtonLimpar)
+                        .addComponent(jButtonInserir)
+                        .addComponent(jButtonBuscar))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldQtd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -295,11 +291,11 @@ public class Formulario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButtonInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInserirActionPerformed
           try{
-              String nome = jTextField3.getText();
-              String preco = jTextField1.getText();
-              String qtde = jTextField2.getText();
+              String nome = jTextFieldNome.getText();
+              String preco = jTextFieldPreco.getText();
+              String qtde = jTextFieldQtd.getText();
               if(nome.equals("") || preco.equals("") || qtde.equals("")){
                   throw new Exception ("Preencha todos os campos.");
               }
@@ -316,16 +312,16 @@ public class Formulario extends javax.swing.JFrame {
                     JOptionPane.ERROR_MESSAGE);
         }
           
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jButtonInserirActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimparActionPerformed
        limparCampos();
        reiniciaBotoes();
        jTable1.clearSelection();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonLimparActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       String nome = jTextField3.getText();
+    private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
+       String nome = jTextFieldNome.getText();
        DefaultTableModel model = ((DefaultTableModel)jTable1.getModel());
        for(int i=0; i< model.getRowCount(); i++){
        String n = (String)model.getValueAt(i, 1);
@@ -338,11 +334,11 @@ public class Formulario extends javax.swing.JFrame {
        }
        
        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonBuscarActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void jTextFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_jTextFieldIDActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
      //evento duplo clique
@@ -357,11 +353,11 @@ public class Formulario extends javax.swing.JFrame {
      
     }//GEN-LAST:event_jTable1MouseClicked
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jButtonAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAlterarActionPerformed
                 try{
-              String nome = jTextField3.getText();
-              String preco = jTextField1.getText();
-              String qtde = jTextField2.getText();
+              String nome = jTextFieldNome.getText();
+              String preco = jTextFieldPreco.getText();
+              String qtde = jTextFieldQtd.getText();
               if(nome.equals("") || preco.equals("") || qtde.equals("")){
                   throw new Exception ("Preencha todos os campos.");
               }
@@ -371,7 +367,7 @@ public class Formulario extends javax.swing.JFrame {
                       +nome+"',preco_produto= '"
                       +preco+"',quantidade_produto="
                       +qtd+" WHERE id_produto=" 
-                      + jTextField4.getText());
+                      + jTextFieldID.getText());
               limparCampos();
               listarTabela();
               reiniciaBotoes();
@@ -384,9 +380,9 @@ public class Formulario extends javax.swing.JFrame {
                     JOptionPane.ERROR_MESSAGE);
         }
           
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_jButtonAlterarActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void jButtonRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRemoverActionPerformed
         try{
           int ret =  JOptionPane.showConfirmDialog(
                     this,
@@ -397,7 +393,7 @@ public class Formulario extends javax.swing.JFrame {
               throw new Exception("Operação cancelada pelo usuário");
           }
           statement.executeUpdate("DELETE FROM produto WHERE id_produto=" + 
-                  jTextField4.getText());
+                  jTextFieldID.getText());
             JOptionPane.showMessageDialog(this,
                     "Produto removido",
                     "Confirmado",
@@ -418,7 +414,7 @@ public class Formulario extends javax.swing.JFrame {
             reiniciaBotoes();
         
         
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_jButtonRemoverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -457,20 +453,20 @@ public class Formulario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButtonAlterar;
+    private javax.swing.JButton jButtonBuscar;
+    private javax.swing.JButton jButtonInserir;
+    private javax.swing.JButton jButtonLimpar;
+    private javax.swing.JButton jButtonRemover;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextFieldID;
+    private javax.swing.JTextField jTextFieldNome;
+    private javax.swing.JTextField jTextFieldPreco;
+    private javax.swing.JTextField jTextFieldQtd;
     // End of variables declaration//GEN-END:variables
 }
