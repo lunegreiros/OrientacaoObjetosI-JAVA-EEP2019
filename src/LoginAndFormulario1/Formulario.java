@@ -363,11 +363,7 @@ public class Formulario extends javax.swing.JFrame {
               }
               int qtd = Integer.parseInt(qtde);
               //INSERT INTO produto VALUES(null, 'asdas', 'asdasd', 9999)
-              statement.executeUpdate("UPDATE produto SET nome_produto='"
-                      +nome+"',preco_produto= '"
-                      +preco+"',quantidade_produto="
-                      +qtd+" WHERE id_produto=" 
-                      + jTextFieldID.getText());
+              statement.executeUpdate("UPDATE produto SET nome_produto='"+nome+"',preco_produto= '"+preco+"',quantidade_produto="+qtd+" WHERE id_produto="+ jTextFieldID.getText());
               limparCampos();
               listarTabela();
               reiniciaBotoes();
